@@ -12,3 +12,4 @@ export type BlogPost = {
     desc: string;
     gitlink: string;
   };
+
