@@ -4,3 +4,27 @@ export type BlogPost = {
     title: string;
     text: string;
   };
+
+  export type Project = {
+    id: number;
+    created_at: string;
+    title: string;
+    desc: string;
+    gitlink: string;
+  };
+
+  export type Experience = {
+    id: number;
+    created_at: string;
+    title: string;
+    company: string;
+    dates: string;
+    summary: string;
+  };
+
+  export type ExpPoint = {
+    id: number;
+    company: string;
+    sumpoint: string;
+  };
+
