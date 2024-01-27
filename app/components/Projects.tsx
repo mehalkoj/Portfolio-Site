@@ -10,22 +10,12 @@ export default function Project(){
 
     useEffect(() => {
         const fetchData = async () => {
-          try {
             const project = await getProject();
             setProject(project);
-          } catch (error) {
-            console.error("Error fetching posts", error);
-          } finally {
-            setLoading(false);
-          }
         };
     
         fetchData();
       }, []);
-
-    if (isLoading) {
-        return <h2>Loading Projects...</h2>;
-      };
 
 
     return(

@@ -29,3 +29,20 @@ export async function getProjectId(){
     return projectId;
 
 };
+
+export async function getExperience(){
+    console.log('Querying Experience...');
+    const {data: experience, error } = await supabase.from('experience').select('*');
+    console.log(experience);
+    console.log('Error:', error);
+    return experience;
+
+};
+
+export async function getExpPoint(){
+    const {data: experience_points, error } = await supabase.from('experience_points').select('sumpoint')
+    console.log(experience_points);
+    console.log('Error:', error);
+    return experience_points;
+
+}

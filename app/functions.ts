@@ -1,5 +1,21 @@
 
 
+export function componentDataBack() {
+
+};
+
+export function componentDataFront() { 
+
+};
 
 
-export function 
+
+function TicketContainerGrid() {
+
+}
+
+
+export function sortExpSum() {
+
+    for '-' in 
+}
