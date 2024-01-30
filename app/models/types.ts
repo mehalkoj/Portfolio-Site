@@ -19,12 +19,11 @@ export type BlogPost = {
     title: string;
     company: string;
     dates: string;
-    summary: string;
   };
 
   export type ExpPoint = {
     id: number;
     company: string;
-    sumpoint: string;
+    summary: string;
   };
 

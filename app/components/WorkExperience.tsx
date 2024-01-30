@@ -4,14 +4,14 @@ import * as Model from '../models/types';
 
 
 
-export default function WorkExperience(){
+export default function WorkExperience({ company }){
     const [experience, setExperience] = useState<Model.Experience[]>([]);
-    const [expPoint, setExptPoint] = useState<Model.ExpPoint[]>([]);
+    const [exp, setExp] = useState<Model.ExpPoint[]>([]);
 
     useEffect(() => {
         const fetchData = async () => {
-            const exp = await getExperience();
-            setExperience(exp);
+            const workExp = await getExperience(company);
+            setExperience(workExp);
         };
     
         fetchData();
@@ -20,23 +20,21 @@ export default function WorkExperience(){
 
     return(
         <>
-        <div className="flex rounded-lg border-black bg-slate-200	">
-            {experience.map((exp) => (
-            <div className="" key={exp.id}>
-                <div className="flex flex-row-reverse">
-                    <div className="w-1/2">Tag Container</div>
-                </div>
-                <div className="flex flex-col">
-                    <div className="flex flex-col border-black border-2 min-w-48 max-w-56">
-                    <div className="">{exp.title}</div>
-                    <div className="">{exp.company}</div>
-                    <div className="">{exp.dates}</div>
-                    </div>
-                    <div className="">{}</div>
-                </div>
-            </div>
-      ))}
-        </div>
+        <div className="flex rounded-lg border-black bg-slate-200 justify-center mt-10">
+  {experience.map((workExp) => (
+    <div className="flex"> 
+      <div className="flex flex-col border-black border-2 min-w-48 max-w-56"> 
+        <div className="">{workExp.title}</div>
+        <div className="">{workExp.company}</div>
+        <div className="">{workExp.dates}</div>
+        <div className="">{exp.summary}</div>
+      </div>
+      <div className="flex flex-row-reverse border-black border-2 w-1/2"> 
+        <div>Tag Container</div>
+      </div>
+    </div>
+  ))}
+</div>
 
         
         </>

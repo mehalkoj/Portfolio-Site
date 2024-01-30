@@ -27,7 +27,7 @@ const BlogPostCanvas = () => {
 
 export default function Home() {
   return (
-    <main className="w-screen h-screen bg-gray-50">
+    <main className="w-full h-full bg-gray-50">
       {/* Header Section */}
       <div className="flex justify-center w-screen">
         <div className="flex flex-col items-center mt-20">
@@ -72,16 +72,18 @@ export default function Home() {
 
 
 
-      <div className="w-screen mt-10">
+      <div className="mt-10">
         <div className="flex justify-center">
 
           <div className="">
-            <div className="text-2xl">Experience</div>
+            <div className="text-2xl ">Experience</div>
 
           </div>
 
           <div className="">
-            <WorkExperience />
+            <WorkExperience company= "30 Lines"/>
+            <WorkExperience company= "M. Roberts Media"/>
+            <WorkExperience company= "Hallsville ISD"/>
           </div>
 
         </div>

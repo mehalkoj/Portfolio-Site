@@ -30,16 +30,20 @@ export async function getProjectId(){
 
 };
 
-export async function getExperience(){
+export async function getExperience(company){
+    const idInUse = [];
     console.log('Querying Experience...');
-    const {data: experience, error } = await supabase.from('experience').select('*');
-    console.log(experience);
+    const {data: experience, error } = (await supabase.from('experience').select('*').eq('company', company));
+
+    
+    
     console.log('Error:', error);
     return experience;
-
 };
 
-export async function getExpPoint(){
+
+
+export async function getExpPoint(company){
     const {data: experience_points, error } = await supabase.from('experience_points').select('sumpoint')
     console.log(experience_points);
     console.log('Error:', error);
