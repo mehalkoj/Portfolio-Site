@@ -44,9 +44,18 @@ export async function getExperience(company){
 
 
 export async function getExpPoint(company){
-    const {data: experience_points, error } = await supabase.from('experience_points').select('sumpoint')
+    const {data: experience_points, error } = (await supabase.from('experience_points').select('*').eq('company', company));
     console.log(experience_points);
     console.log('Error:', error);
     return experience_points;
+
+}
+
+// Checks what companies are in the db then passes it to the component
+export async function checkCompany(){
+    const {data: company, error } = (await supabase.from('experience').select('company'));
+    console.log(company);
+    console.log('Error:', error);
+    return company;
 
 }

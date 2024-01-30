@@ -84,6 +84,7 @@ export default function Home() {
             <WorkExperience company= "30 Lines"/>
             <WorkExperience company= "M. Roberts Media"/>
             <WorkExperience company= "Hallsville ISD"/>
+            
           </div>
 
         </div>

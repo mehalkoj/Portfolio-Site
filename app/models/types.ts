@@ -24,6 +24,6 @@ export type BlogPost = {
   export type ExpPoint = {
     id: number;
     company: string;
-    summary: string;
+    sumpoint: string;
   };
 
