@@ -15,8 +15,8 @@ export function ExpSum({ company }){
     return (
         <>
         {experience_points.map((exp) => (
-            <div className="flex border-black border-2" key={exp.id}>
-            <div className="flex ">{exp.sumpoint}</div>
+            <div className="flex" key={exp.id}>
+            <div className="flex text-sm ">{exp.sumpoint}</div>
             </div>
           ))}
         </>
@@ -40,23 +40,27 @@ export default function WorkExperience({ company }){
 
     return(
         <>
-        <div className="flex rounded-lg border-black bg-slate-200 justify-center mt-10">
-  {experience.map((workExp) => (
-    <div className="flex" key={workExp.id}> 
-      <div className="flex flex-col border-black border-2 min-w-48 max-w-56"> 
-        <div className="">{workExp.title}</div>
-        <div className="">{workExp.company}</div>
-        <div className="">{workExp.dates}</div>
-        <ExpSum company={workExp.company} />
-      </div>
-      <div className="flex flex-row-reverse border-black border-2 w-1/2"> 
-        <div>Tag Container</div>
-      </div>
-    </div>
-  ))}
-</div>
+            <div className="max-w-7xl rounded-lg border-black border-4">
+                {experience.map((workExp) => (
+                    <div key={workExp.id}>
+                        <div className="flex  bg-slate-200 justify-between items-stretch">
+                            <div className="flex flex-col min-w-56 max-w-60 p-2">
+                                <div>{workExp.title}</div>
+                                <div>{workExp.company}</div>
+                                <div>{workExp.dates}</div>
+                            </div>
 
-        
+                            <div className=" flex-grow p-2 ">
+                                <div>Tag Container</div>
+                            </div>
+                        </div>
+
+                        <div className=" bg-slate-200">
+                            <ExpSum company={workExp.company} />
+                        </div>
+                    </div>
+                ))}
+            </div>
         </>
     );
 };
