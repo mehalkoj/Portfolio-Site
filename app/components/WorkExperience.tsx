@@ -15,8 +15,8 @@ export function ExpSum({ company }){
     return (
         <>
         {experience_points.map((exp) => (
-            <div className="flex" key={exp.id}>
-            <div className="flex">{exp.sumpoint}</div>
+            <div className="flex border-black border-2" key={exp.id}>
+            <div className="flex ">{exp.sumpoint}</div>
             </div>
           ))}
         </>
